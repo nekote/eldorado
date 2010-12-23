@@ -1,4 +1,6 @@
 <%= error_messages_for :user %>
+<% if admin? %>
+
 <% @user = User.new unless @user %>
 <% form_for @user do |f| %>
   <div class="box" id="box-users-new">
@@ -19,3 +21,15 @@
   </div>
 <% end %>
 <%= javascript_tag "$('user_login').focus();" %>
+
+<% else %>
+ <center>
+ <br><br><br>
+ <font size=4>You are not logged in as an Administrator.<br>
+ <br>
+ If you would like to Register, please send an email to:<br>
+ <a href="mailto:eestorblog@gmail.com">B / the EEStor Blogger</a><br>
+ <br><br><br>
+ </font>
+ </center>
+<% end %>
