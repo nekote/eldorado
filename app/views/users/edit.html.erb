@@ -19,7 +19,15 @@
     <p><%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %></p>
     <p>
       <%= submit_tag I18n.t(:save_changes), :disable_with => I18n.t(:save_changes) %>&nbsp; 
+#
+#      <%= link_to I18n.t(:delete), confirm_delete_user_path %> &nbsp;
+#
+# Allow *only* admins to delete any user
+#
+    <% if admin? %>
       <%= link_to I18n.t(:delete), confirm_delete_user_path %> &nbsp;
+    <% end %>
+#
       <%= link_to I18n.t(:cancel), @user %>
     </p>
   </div>
