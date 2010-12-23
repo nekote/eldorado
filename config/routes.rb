@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => 'home'
+  map.root :controller => 'articles'
 
   map.resources :articles
   map.resources :avatars, :member => {:select => :post, :deselect => :post}
@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :events
   map.resources :forums, :member => {:confirm_delete => :get}
   map.resources :headers, :member => {:vote_up => :post, :vote_down => :post}
+  map.resources :home
   map.resources :messages, :collection => {:more => :get, :refresh => :get}
   map.resources :posts, :member => {:quote => :get, :topic => :get}
   map.resources :ranks
