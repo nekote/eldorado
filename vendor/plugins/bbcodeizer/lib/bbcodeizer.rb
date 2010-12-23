@@ -54,6 +54,11 @@ module BBCodeizer
       :sub                   => [ /\[sub\](.+?)\[\/sub\]/im, '<sub>\1</sub>' ],
       :center                => [ /\[center\](.+?)\[\/center\]/im, '<center>\1</center>' ],
       :br                    => [ /\[br\]/i, '<br>' ],
+      :table                 => [ /\[table\](.+?)\[\/table\]/im, '<table>\1</table>' ],
+      :tbl                   => [ /\[tbl\](.+?)\[\/tbl\]/im, '<table>\1</table>' ],
+      :th                    => [ /\[th\](.+?)\[\/th\]/im, '<th>\1</th>' ],
+      :tr                    => [ /\[tr\](.+?)\[\/tr\]/im, '<tr>\1</tr>' ],
+      :td                    => [ /\[td\](.+?)\[\/td\]/im, '<td>\1</td>' ],
       :smiley_biggrin        => [ /\[:\-?D\]/,      '<img title=":D" src="/images/emoticons/icon_biggrin.gif" alt="biggrin"/>'],
       :smiley_smile          => [ /\[:\-?\)\]/,     '<img title=":)" src="/images/emoticons/icon_smile.gif" alt="smile" />'],
       :smiley_wink           => [ /\[;\-?\)\]/,     '<img title=";)" src="/images/emoticons/icon_wink.gif" alt="wink" />'],
@@ -84,7 +89,7 @@ module BBCodeizer
                 :smiley_wink ,:smiley_sad ,:smiley_surprised ,:smiley_cool, :smiley_confused,
                 :smiley_cry ,:smiley_eek ,:smiley_evil ,:smiley_lol ,:smiley_mad ,:smiley_razz,
                 :smiley_redface, :smiley_rolleyes, :smiley_twisted, :grooveshark, :sub, :sup,
-                :br, :center  ]
+                :br, :center, :table, :tbl, :th, :tr, :td  ]
 
     # Parses all bbcode in +text+ and returns a new HTML-formatted string.
     def bbcodeize(text)
