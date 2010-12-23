@@ -2,7 +2,7 @@
   <% if can_edit?(@article) %>
     <div class="clear"> </div>
     <div class="info-left">
-      <%= link_to I18n.t(:home), root_path %> &raquo; 
+      <%= link_to I18n.t(:home), home_path %> &raquo; 
       <%= link_to I18n.t(:blog), blog_path %> &raquo; <%= h(@article) %>
     </div>
     <div class="info-right">
@@ -13,7 +13,7 @@
 
 <% if current_controller == 'avatars' and current_action == 'index' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:users), users_path %> &raquo; <%=t :avatars %>
   </div>
   <div class="info-right">
@@ -23,7 +23,7 @@
 
 <% if current_controller == 'avatars' and current_action == 'new' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:users), users_path %> &raquo; 
     <%= link_to I18n.t(:avatars), avatars_path %> &raquo; <%=t :new_avatar %>
   </div>
@@ -31,7 +31,7 @@
 
 <% if current_controller == 'categories' and current_action == 'show' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> &raquo; <%=h @category %>
   </div>
   <div class="info-right">
@@ -59,7 +59,7 @@
 
 <% if current_controller == 'events' and current_action == 'edit' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:events), events_path %> &raquo; 
     <%= link_to h(@event), @event %> &raquo; <%=t :editing_event %>
   </div>
@@ -67,14 +67,14 @@
 
 <% if current_controller == 'events' and current_action == 'new' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:events), events_path %> &raquo; <%=t :new_event %>
   </div>
 <% end %>
 
 <% if current_controller == 'events' and current_action == 'show' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:events), events_path %> &raquo; <%=h @event %>
   </div>
   <div class="info-right">
@@ -101,7 +101,7 @@
 
 <% if current_controller == 'forums' and current_action == 'show' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> &raquo; 
     <%= link_to h(@forum.category), @forum.category %> &raquo; <%=h @forum %>
   </div>
@@ -121,14 +121,14 @@
 
 <% if current_controller == 'headers' and current_action == 'new' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:headers), headers_path %> &raquo; <%=t :new_header %>
   </div>
 <% end %>
 
 <% if current_controller == 'headers' and current_action == 'edit' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:headers), headers_path %> &raquo; 
     <%= link_to h(@header), @header %> &raquo; <%=t :editing_header %>
   </div>
@@ -136,7 +136,7 @@
 
 <% if current_controller == 'headers' and current_action == 'show' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:headers), headers_path %> &raquo; <%=h @header %>
   </div>
   <div class="info-right">
@@ -148,7 +148,7 @@
 
 <% if current_controller == 'posts' and current_action == 'edit' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> <%= link_to I18n.t(:topics), topics_path %> &raquo; 
     <%= link_to h(@post.topic.forum.category), @post.topic.forum.category %> &raquo; 
     <%= link_to h(@post.topic.forum), @topic.forum %> &raquo;
@@ -158,7 +158,7 @@
 
 <% if current_controller == 'posts' and current_action == 'show' %>
   <div class="info-left" style="margin-top:5px;">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> <%= link_to I18n.t(:topics), topics_path %> &raquo; 
     <%= link_to h(@post.topic.forum.category), @post.topic.forum.category %> &raquo; 
     <%= link_to h(@post.topic.forum), @topic.forum %> &raquo;
@@ -180,7 +180,7 @@
 
 <% if current_controller == 'themes' and current_action == 'new' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:users), users_path %> &raquo; 
     <%= link_to I18n.t(:themes), themes_path %> &raquo; <%=t :new_theme %>
   </div>
@@ -194,7 +194,7 @@
 
 <% if current_controller == 'topics' and current_action == 'index' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> &raquo; <%=t :all_topics %>
   </div>
   <div class="info-right">
@@ -204,21 +204,21 @@
 
 <% if current_controller == 'topics' and current_action == 'new' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> &raquo; <%=t :new_topic %>
   </div>
 <% end %>
 
 <% if current_controller == 'topics' and current_action == 'edit' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to h(@topic), @topic %> &raquo; <%=t :editing_topic %>
   </div>
 <% end %>
 
 <% if current_controller == 'topics' and current_action == 'show' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:forum), forum_root_path %> <%= link_to I18n.t(:topics), topics_path %> &raquo; 
     <%= link_to h(@topic.forum.category), @topic.forum.category %> &raquo; 
     <%= link_to h(@topic.forum), @topic.forum %>
@@ -246,7 +246,7 @@
 
 <% if current_controller == 'uploads' and current_action == 'new' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:files), files_path %> &raquo; <%=t :new_file %>
   </div>
 <% end %>
@@ -259,7 +259,7 @@
 
 <% if current_controller == 'users' and current_action == 'edit' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:users), users_path %> &raquo; 
     <%= link_to h(@user), @user %> &raquo; <%=t :editing_profile %>
   </div>
@@ -267,7 +267,7 @@
 
 <% if current_controller == 'users' and current_action == 'show' %>
   <div class="info-left">
-    <%= link_to I18n.t(:home), root_path %> &raquo; 
+    <%= link_to I18n.t(:home), home_path %> &raquo; 
     <%= link_to I18n.t(:users), users_path %> &raquo; <%=h @user %>
   </div>
   <div class="info-right">
