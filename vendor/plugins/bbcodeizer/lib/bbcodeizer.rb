@@ -52,6 +52,8 @@ module BBCodeizer
       :grooveshark           => [ /\[grooveshark\](.+?)\[\/grooveshark\]/i, '<object width="250" height="40"> <param name="movie" value="http://listen.grooveshark.com/songWidget.swf"></param> <param name="wmode" value="window"></param> <param name="allowScriptAccess" value="always"></param> <param name="flashvars" value="hostname=cowbell.grooveshark.com&widgetID=\1&style=grass&p=0"></param> <embed src="http://listen.grooveshark.com/songWidget.swf" type="application/x-shockwave-flash" width="250" height="40" flashvars="hostname=cowbell.grooveshark.com&widgetID=\1&style=grass&p=0" allowScriptAccess="always" wmode="window"></embed></object>'],
       :sup                   => [ /\[sup\](.+?)\[\/sup\]/im, '<sup>\1</sup>' ],
       :sub                   => [ /\[sub\](.+?)\[\/sub\]/im, '<sub>\1</sub>' ],
+      :center                => [ /\[center\](.+?)\[\/center\]/im, '<center>\1</center>' ],
+      :br                    => [ /\[br\]/i, '<br>' ],
       :smiley_biggrin        => [ /\[:\-?D\]/,      '<img title=":D" src="/images/emoticons/icon_biggrin.gif" alt="biggrin"/>'],
       :smiley_smile          => [ /\[:\-?\)\]/,     '<img title=":)" src="/images/emoticons/icon_smile.gif" alt="smile" />'],
       :smiley_wink           => [ /\[;\-?\)\]/,     '<img title=";)" src="/images/emoticons/icon_wink.gif" alt="wink" />'],
@@ -81,7 +83,8 @@ module BBCodeizer
                 :atomfilms, :vimeo, :li, :list, :current, :smiley_biggrin, :smiley_smile,
                 :smiley_wink ,:smiley_sad ,:smiley_surprised ,:smiley_cool, :smiley_confused,
                 :smiley_cry ,:smiley_eek ,:smiley_evil ,:smiley_lol ,:smiley_mad ,:smiley_razz,
-                :smiley_redface, :smiley_rolleyes, :smiley_twisted, :grooveshark, :sub, :sup  ]
+                :smiley_redface, :smiley_rolleyes, :smiley_twisted, :grooveshark, :sub, :sup,
+                :br, :center  ]
 
     # Parses all bbcode in +text+ and returns a new HTML-formatted string.
     def bbcodeize(text)
