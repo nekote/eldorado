@@ -17,7 +17,10 @@ h1,h1 a:link,h1 a:visited,h1 a:hover,h1 a:active{text-decoration:none;color:#fff
 h1 a:hover,h1 a:active{text-decoration:underline;}
 h3{font-size:14px;font-weight:400;}
 .tagline{font-family:'Lucida Grande', Verdana, Arial, Sans-Serif;font-size:10px;color:#fff;padding:0 40px;}
+/*
 .tabs{position:absolute;bottom:0;font-size:10px;margin:-18px 0 0 14px;padding:0;}
+*/
+.tabs{position:absolute;bottom:0;font-size:10px;margin:-18px 0 0 7px;padding:0;}
 .tabs li{display:inline;margin:0 2px;}
 .tabs,.tabs li a{padding:6px 12px;}
 .tabs li a{color:#FFF;text-decoration:none;}
@@ -69,9 +72,14 @@ tbody .tds{border:0;padding:10px;}
 .comment-body{margin-top:4px;}
 .secondary-list{padding-bottom:20px;margin:5px 10px;}
 .secondary-list li{margin-bottom:6px;}
+/*
 .messages-index .tcu{width:20%;text-align:right;font-weight:700;padding-right:8px;}
 .messages-index .tcl{width:60%;max-width:477px;overflow:auto;border-right:0;background:#dedfdf;}
 .messages-index .tcr{width:20%;text-align:right;border-left:0;color:#999;}
+*/
+.messages-index .tcu{width:18%;text-align:right;font-weight:700;padding-right:8px;}
+.messages-index .tcl{width:63%;max-width:477px;overflow:auto;border-right:0;background:#dedfdf;}
+.messages-index .tcr{width:19%;text-align:right;border-left:0;color:#999;}
 .info-left{float:left;padding-left:5px;border-left:1px solid #f1f1f1;margin:0 0 10px;}
 .info-center{float:left;text-align:center;margin:0 8px 10px;}
 .info-right{float:right;text-align:right;padding-right:5px;border-right:1px solid #f1f1f1;margin:0 0 10px;}
