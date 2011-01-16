@@ -54,8 +54,10 @@ module BBCodeizer
       :sub                   => [ /\[sub\](.+?)\[\/sub\]/im, '<sub>\1</sub>' ],
       :center                => [ /\[center\](.+?)\[\/center\]/im, '<center>\1</center>' ],
       :br                    => [ /\[br\]/i, '<br>' ],
-      :table                 => [ /\[table\](.+?)\[\/table\]/im, '<table>\1</table>' ],
-      :tbl                   => [ /\[tbl\](.+?)\[\/tbl\]/im, '<table>\1</table>' ],
+      :start_table           => [ /\[table\](\r\n?)?/i, '<table>' ],
+      :end_table             => [ /(\r\n?)?\[\/table\]/i, '</table>' ],
+      :start_tbl             => [ /\[tbl\](\r\n?)?/i, '<table>' ],
+      :end_tbl               => [ /(\r\n?)?\[\/tbl\]/i, '</table>' ],
       :th                    => [ /\[th\](.+?)\[\/th\]/im, '<th>\1</th>' ],
       :tr                    => [ /\[tr\](.+?)\[\/tr\]/im, '<tr>\1</tr>' ],
       :td                    => [ /\[td\](.+?)\[\/td\]/im, '<td>\1</td>' ],
@@ -157,6 +159,26 @@ module BBCodeizer
         # strip out newlines from within the tags and replace them with '<br />', otherwise
         # simple_format will simply append a '<br />' to the newlines, creating double spaces
         string.gsub!(/#{Tags[:start_quote].last}.+?#{Tags[:end_quote].last}/im) { |s| s.gsub(/\r\n?/, '<br />') }
+      end
+    end
+
+    def table(string)
+      # table tags must match, else don't do any replacing.
+      if string.scan(Tags[:start_table].first).size == string.scan(Tags[:end_table].first).size
+        apply_tags(string, :start_table, :end_table)
+        # strip out newlines from within the tags and replace them with '' (nothing), otherwise
+        # simple_format will simply append a '<br />' to the newlines, creating double spaces
+        string.gsub!(/#{Tags[:start_table].last}.+?#{Tags[:end_table].last}/im) { |s| s.gsub(/\r\n?/, '') }
+      end
+    end
+
+    def tbl(string)
+      # tbl tags must match, else don't do any replacing.
+      if string.scan(Tags[:start_tbl].first).size == string.scan(Tags[:end_tbl].first).size
+        apply_tags(string, :start_tbl, :end_tbl)
+        # strip out newlines from within the tags and replace them with '' (nothing), otherwise
+        # simple_format will simply append a '<br />' to the newlines, creating double spaces
+        string.gsub!(/#{Tags[:start_table].last}.+?#{Tags[:end_table].last}/im) { |s| s.gsub(/\r\n?/, '') }
       end
     end
 
