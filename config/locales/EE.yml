@@ -169,15 +169,15 @@ EE:
   add_rank: Add Rank
   add_a_new_rank: Add a New Rank
   minimum_posts: Minimum Posts
-  edit_ban: Edit Ban
-  remove_ban: Remove Ban
-  ban_user: Ban User
+  edit_ban: Edit Suspension
+  remove_ban: Remove Suspension
+  ban_user: Suspend User
   message: Message
-  ban_until: Ban Until
+  ban_until: Suspend Until
   revoke_admin: Revoke Admin
   make_admin: Make Admin
   rank_administrator: Administrator
-  rank_banned: Banned
+  rank_banned: Suspended
   rank_member: Member
   tagline: Tagline
   login_message: Login Message
